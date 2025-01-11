@@ -1,10 +1,5 @@
 # Azure DevOps CI/CD Pipeline for Cloud-Native Microservices E-Commerce Platform
 
-<p align="center">
-<img src="/src/frontend/static/icons/Hipster_HeroLogoMaroon.svg" width="300" alt="Online Boutique" />
-</p>
-
-![Azure DevOps Build Status](https://dev.azure.com/YOUR_ORG/YOUR_PROJECT/_apis/build/status/YOUR_PIPELINE?branchName=main)
 
 ## Project Overview
 This enterprise-grade microservices application demonstrates a modern cloud-native architecture integrated with Azure DevOps CI/CD practices. The project showcases end-to-end implementation of a scalable e-commerce platform using industry-standard technologies and best practices.
