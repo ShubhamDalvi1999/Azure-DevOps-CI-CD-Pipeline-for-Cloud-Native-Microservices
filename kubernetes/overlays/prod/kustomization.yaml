@@ -1,0 +1,41 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: online-boutique-prod
+namePrefix: prod-
+
+resources:
+  - ../../base
+
+commonLabels:
+  environment: production
+
+replicas:
+  - name: ms-frontend
+    count: 3
+  - name: ms-cart
+    count: 3
+  - name: ms-productcatalog
+    count: 3
+  - name: ms-currency
+    count: 3
+  - name: ms-payment
+    count: 3
+  - name: ms-shipping
+    count: 3
+  - name: ms-email
+    count: 3
+  - name: ms-checkout
+    count: 3
+  - name: ms-recommendation
+    count: 3
+  - name: ms-ad
+    count: 3
+
+configMapGenerator:
+  - name: online-boutique-config
+    literals:
+      - ENVIRONMENT=production
+
+resources:
+  - ../../networking/istio 

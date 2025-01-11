@@ -1,0 +1,31 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - deployments/ms-frontend-deployment.yaml
+  - deployments/ms-cart-deployment.yaml
+  - deployments/ms-productcatalog-deployment.yaml
+  - deployments/ms-currency-deployment.yaml
+  - deployments/ms-payment-deployment.yaml
+  - deployments/ms-shipping-deployment.yaml
+  - deployments/ms-email-deployment.yaml
+  - deployments/ms-checkout-deployment.yaml
+  - deployments/ms-recommendation-deployment.yaml
+  - deployments/ms-ad-deployment.yaml
+  - deployments/ms-loadgenerator-deployment.yaml
+  - services/ms-frontend-service.yaml
+  - services/ms-cart-service.yaml
+  - services/ms-productcatalog-service.yaml
+  - services/ms-currency-service.yaml
+  - services/ms-payment-service.yaml
+  - services/ms-shipping-service.yaml
+  - services/ms-email-service.yaml
+  - services/ms-checkout-service.yaml
+  - services/ms-recommendation-service.yaml
+  - services/ms-ad-service.yaml
+  - services/ms-loadgenerator-service.yaml
+  - storage/redis/redis-deployment.yaml
+
+commonLabels:
+  app.kubernetes.io/part-of: online-boutique
+  app.kubernetes.io/managed-by: kustomize 

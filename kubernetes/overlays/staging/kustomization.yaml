@@ -1,0 +1,38 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: online-boutique-staging
+namePrefix: staging-
+
+resources:
+  - ../../base
+
+commonLabels:
+  environment: staging
+
+replicas:
+  - name: ms-frontend
+    count: 2
+  - name: ms-cart
+    count: 2
+  - name: ms-productcatalog
+    count: 2
+  - name: ms-currency
+    count: 2
+  - name: ms-payment
+    count: 2
+  - name: ms-shipping
+    count: 2
+  - name: ms-email
+    count: 2
+  - name: ms-checkout
+    count: 2
+  - name: ms-recommendation
+    count: 2
+  - name: ms-ad
+    count: 2
+
+configMapGenerator:
+  - name: online-boutique-config
+    literals:
+      - ENVIRONMENT=staging 
